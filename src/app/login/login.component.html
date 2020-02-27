@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- Default form login -->
+<div>
+
+    <p>{{msg}}</p>
+</div>
+<form class="text-center border border-light p-5" id="hey" (ngSubmit)="checkValidation()">
+
+    <p class="h4 mb-4">Sign in</p>
+
+    <!-- Email -->
+    <input type="email"  [(ngModel)]="u_emailid" name="u_emailid" class="form-control mb-4" placeholder="E-mail" /><br/>
+
+    <!-- Password -->
+    <input type="password" [(ngModel)]="u_password" name="u_password" class="form-control mb-4" placeholder="Password" />
+
+    <div class="d-flex justify-content-around">
+        <div>
+            <!-- Remember me -->
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+            </div>
+        </div>
+        <div>
+            <!-- Forgot password -->
+            <a href="">Forgot password?</a>
+        </div>
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4" type="submit">sign in</button>
+
+    <!-- Register -->
+    <p>Not a member?
+        <a routerLink="/registration">Register</a>
+    </p>
+</form>
+
+<!-- Default form login -->

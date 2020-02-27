@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <style>
+        h2{
+            color: red;
+        }
+        
+                </style>
+    <body>
+
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h2 style="text-align: center;font-family: fantasy;">Registration</h2>
+            <div class="row" style="padding-top: 25px;">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for=" u_firstname">First Name</label>
+                        <input type="text" formControlName="u_firstname" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.u_firstname.errors }" placeholder="firstname"/>
+                        <div id="b1">
+                            <div  *ngIf="submitted && f.u_firstname.errors" class="invalid-feedback">
+                                <div  *ngIf="f.u_firstname.errors.required">First Name is required</div>
+                                <div *ngIf="f.u_firstname.errors.minlength">First Name should contain atleast 6 charecters</div> 
+                                <div *ngIf="f.u_firstname.errors.maxlength">First Name should not be more than 25 characters</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fullname">Last Name</label>
+                        <input type="text" formControlName="u_lastname" class="form-control"
+                        [ngClass]="{ 'is-invalid': submitted && f.u_lastname.errors }" placeholder="lastname"/>
+                        <div id="b1">
+                            <div *ngIf="submitted && f.u_lastname.errors" class="invalid-feedback">
+                            <div *ngIf="f.u_lastname.errors.required">Last Name is required</div>
+                            <div *ngIf="f.u_lastname.errors.minlength">Last Name should contain at least 7 characters</div>
+                            <div *ngIf="f.u_lastname.errors.maxlength">Last Name should not be more than 45 characters</div>
+            
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+    
+       
+
+        <div class="form-group">
+            <label for="u_password">Password</label>
+            <input type="password" formControlName="u_password" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.u_password.errors }" placeholder="password"/>
+            <div id="b1">
+                <div *ngIf="submitted && f.u_password.errors" class="invalid-feedback">
+                <div *ngIf="f.u_password.errors.required">Password is required</div>
+                <div *ngIf="f.u_password.errors.minlength">Password should contain atleast 6 characters</div>
+                <div *ngIf="f.u_password.errors.maxlength">Password should not be more than 15 characters</div>
+                <div *ngIf="f.u_password.errors.pattern">Password must start with capital letter,contain at least one digit and one special character</div>
+                
+            </div>
+            </div>
+        </div>
+
+       
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" formControlName="u_emailid" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.u_emailid.errors }" placeholder="email" />
+            <div id="b1">
+            
+                <div *ngIf="submitted && f.u_emailid.errors" class="invalid-feedback">
+                    <div *ngIf="f.u_emailid.errors.required">Email is required</div>
+                    <div *ngIf="f.u_emailid.errors.pattern">Email must be vaild</div>
+                </div>
+            </div>
+        </div>
+ 
+
+        <div class="form-group">
+            <label for="u_aadhaarno">Adhaar Number</label>
+            <input type="text" formControlName="u_aadhaarno" class="form-control" 
+            [ngClass]="{ 'is-invalid': submitted && f.u_aadhaarno.errors }" placeholder="aadhar number"/>
+            <div id="b1">
+        
+            <div *ngIf="submitted && f.u_aadhaarno.errors" class="invalid-feedback">
+                <div *ngIf="f.u_aadhaarno.errors.required">Adhaar Number is required</div>
+                <div *ngIf="f.u_aadhaarno.errors.minlength">Adhaar Number contain 10 digit</div>
+                <div *ngIf="f.u_aadhaarno.errors.maxlength">Adhaar Number should not be more than 10 digits</div>
+                <div *ngIf="f.u_aadhaarno.errors.pattern">Adhaar Number cannot contain characters and it must start 6-to-9 </div>
+            </div>
+            </div>
+        </div><br/>
+   
+  
+       <div class="row">
+           <div class="col-md-2"></div>
+           <div class="col-md-6">
+                <div style="float:left;">
+                    <button [disabled]="loading" class="btn btn-primary">Register</button>    
+                </div>
+                <div style="float:right;padding-left: 50px;">
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                </div>
+           </div>
+           <div class="col-md-2"></div>
+       </div>
+        
+    </div>
+    <div class="col-md-4"></div>
+</div>
+</form>   
+</body>
+</html> 
+

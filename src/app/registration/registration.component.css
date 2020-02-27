@@ -1,0 +1,10 @@
+#registration
+{
+    width: 400px;
+    margin: auto;
+}
+
+.invalid-input
+{
+    color: red;
+}

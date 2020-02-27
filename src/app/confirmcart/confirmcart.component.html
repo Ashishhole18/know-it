@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<img src="{{prod.p_imageurl1}}" />
+<img src="{{prod.p_imageurl2}}" />
+<img src="{{prod.p_imageurl3}}" />
+<hr/>
+<ul>
+    <li><b>Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>{{prod.p_model}}</li>  
+    <li><b>Availability&nbsp;&nbsp;: </b>{{prod.p_address}}</li>   
+    <li><b>Description&nbsp;: </b>productid{{prod.p_description}}</li>
+    <li><b>Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>{{prod.perdayprice|currency:"&#8377;"}}/day</li>
+</ul>
+<br/>
+<div style="padding-left: 25px;">
+    <button  type="button" (click)="addToCart()" class="btn btn-danger btn-sm">
+    <span class="glyphicon glyphicon-shopping-cart"></span> Confirm to Add</button>
+</div>

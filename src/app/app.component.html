@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="row" style="height: 100px; width: 100%">
+    <h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;text-align: center;">Camkart.com</h2>
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">camkart.com</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/user-register">SignUp</a></li>
+    </ul>
+    <form class="navbar-form navbar-right" action="/action_page.php">
+      <div class="form-group" style="padding-right: 5px;">
+        <input type="text" [(ngModel)]="search" name="search" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" (click)="getSearch()" class="btn btn-default">Search</button>
+    </form>
+    <div style="padding-top: 10px;">
+    <button  type="button" style="float:right;" (click)="getKart()" class="btn btn-default btn-sm">
+      <span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart
+    </button>
+    </div>
+  </div>
+</nav>
+<div class="footer">
+  <p>© 2020  All Rights Reserved.
+    Designed & Developed by camkart.com</p>
+</div>     
+<router-outlet></router-outlet>

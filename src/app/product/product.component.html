@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <form (ngSubmit)="onRegistration()">
+            <div class="page-header">
+                <h1>Add Product</h1>
+                <marquee>Welcome to Camkart.com</marquee>
+            </div>
+            <div class="form-group">
+                <div class="row">    
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="sel1">Brand:</label>
+                            <select [(ngModel)]="product.p_brands" name="p_brands" class="form-control" id="sel1">
+                              <option>Select Brand</option>
+                              <option value="Nikon">Nikon</option>
+                              <option value="Canon">Canon</option>
+                              <option value="Sony">Sony</option>
+                            </select>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                
+                <label for="deposit">Deposit:</label>
+                <input type="number" [(ngModel)]="product.p_deposit" name="email" class="form-control mb-4" placeholder="Enter deposit amount">
+            </div>
+            <div class="form-group">
+                
+                <label for="perdayprice">Per Day Price:</label>
+                <input type="number" [(ngModel)]="product.perdayprice" name="email" class="form-control mb-4" placeholder="Enter per day expected amount">
+            </div>
+            
+            <div class="form-group">
+                <label for="modelno">Model Number:</label>
+                <input type="text" [(ngModel)]="product.p_model" name="email" class="form-control mb-4" placeholder="Enter your model number">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea type="text" [(ngModel)]="product.p_description" name="email" class="form-control mb-4" placeholder="Write description about camera" ></textarea>
+            </div>
+            <div class="form-group">
+                <div class="row">    
+                    <div class="col-md-6">
+                        <label for="avlfrom">Available From:</label>
+                        <input type="date" name="avlfrom" [ngModel] ="product.p_avlfrom | date:'yyyy-MM-dd'" (ngModelChange)="product.p_avlfrom = $event">
+                    </div> 
+                    <div class="col-md-6">
+                        <label for="avlto">Available To:</label>
+                        <input type="date" name="avlto" [ngModel] ="product.p_avlto | date:'yyyy-MM-dd'" (ngModelChange)="product.p_avlto = $event"> 
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center">
+                <div [innerHtml]='msg'></div>
+                <label>
+                    <input type="file" (change)="selectFile($event)">
+                    </label>
+                    <button [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+            </div>
+            <div style="padding-left: 40%;padding-top: 12%;">
+                <button type="submit" class="btn btn-default btn btn-info">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>

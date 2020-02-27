@@ -1,0 +1,20 @@
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<img src="{{product.p_imageurl1}}" />
+<img src="{{product.p_imageurl2}}" />
+<img src="{{product.p_imageurl3}}" />
+<hr/>
+<ul>
+    <li><b>Model        : </b>{{product.p_model}}</li>  
+    <li><b>Availability : </b>{{product.p_address}}</li>   
+    <li><b>Description  : </b>productid{{product.p_description}}</li>
+    <li><b>Amount       : </b>{{product.perdayprice|currency:"&#8377;"}}/day</li>
+</ul>
+<br/><br/>
+<div style="padding-left: 25px;">
+    <button  type="button" (click)="addToCart()" class="btn btn-info btn-sm" >
+    <span class="glyphicon glyphicon-shopping-cart"></span> Add TO Cart</button>
+</div>
