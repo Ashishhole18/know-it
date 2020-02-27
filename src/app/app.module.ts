@@ -17,7 +17,6 @@ import { ConfirmcartComponent } from './confirmcart/confirmcart.component';
 import { AddedtocartComponent } from './addedtocart/addedtocart.component';
 import { Pipe, PipeTransform } from '@angular/core';
 import { UserRegisterComponent } from './user-register/user-register.component';
-import { ToggleComponent } from './toggle/toggle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
@@ -34,8 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    ShowsearchComponent,
    ConfirmcartComponent,
    AddedtocartComponent,
-   UserRegisterComponent,
-   ToggleComponent
+   UserRegisterComponent
   ],
   imports: [
     BrowserModule,
