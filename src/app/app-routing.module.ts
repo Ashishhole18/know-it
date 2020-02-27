@@ -11,7 +11,6 @@ import { ShowsearchComponent } from './showsearch/showsearch.component';
 import { ConfirmcartComponent } from './confirmcart/confirmcart.component';
 import { AddedtocartComponent } from './addedtocart/addedtocart.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
-import { ToggleComponent } from './toggle/toggle.component';
 
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
@@ -25,8 +24,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/allproduct', pathMatch: 'full'},
   {path:'confirmcart',component:ConfirmcartComponent},
   {path:'addedtocart',component:AddedtocartComponent},
-  {path:'user-register',component:UserRegisterComponent},
-  {path:'toggle',component:ToggleComponent}
+  {path:'user-register',component:UserRegisterComponent}
   
 ];
 
@@ -35,4 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[LoginComponent,RegistrationComponent,HomeComponent,AllproductComponent,KartComponent,AddedtocartComponent,ToggleComponent];
+export const routingComponents=[LoginComponent,RegistrationComponent,HomeComponent,AllproductComponent,KartComponent,AddedtocartComponent];
